@@ -13,8 +13,13 @@ function actionfun(){
        document.getElementById("val").innerText=this.innerText;
     }
     else if(this.innerText=='='){
-       let res= eval(document.getElementById('val').innerText);
+      try{
+        let res= eval(document.getElementById('val').innerText);
        document.getElementById('val').innerText=res;
+        }
+        catch{
+            document.getElementById('val').innerText='Error';
+        }
 
     }
     else if(this.innerText=='CE'){
